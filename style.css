@@ -11,22 +11,33 @@ html
     bg: background color
     icsz: icon size
     */
+    --sidebar-bgl: #6366f1;
     --sidebar-fs: 2.5rem;
     --sidebar-fw: 600;
     --sidebar-fcl: #fafafa;
     --sidebar-icsz: 2rem;
-    --sidebar-bgl: #6366f1;
+    --topbar-bgl: #f8fafc;
+    --topbar-fs: 2.25rem;
+    --topbar-fw: 600;
+    --topbar-fcl: #0f172a;
+    --topbar-icsz: calc(1.7*var(--sidebar-icsz));
+    --searchbar-bgl: #e2e8f0;
+    --searchbar-fw: 400;
+    --button-bgl: var(--sidebar-bgl);
+    --button-fcl: var(--sidebar-fcl);
 }
 body
 {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     display: grid;
     min-height: 100vh;
     min-width: 100vw;
-    grid-template: 15% 35% 35% / 20% 1fr 20% 0;
-    gap: 5%;
+    grid-template: 20vh 40vh 40vh / 20% 1fr 20% 0;
 }
+
+
 .sidebar
 {
     background-color: var(--sidebar-bgl);
@@ -55,6 +66,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     font-size: min(var(--sidebar-fs), 2vw);
     font-weight: var(--sidebar-fw);
+    color: var(--sidebar-fcl);
 }
 .sidebar .icon
 {
@@ -70,4 +82,121 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 .sidebar .title-section .icon /* targeting the dashboard logo */
 {
     width: min(1.5*calc(var(--sidebar-icsz)), 3vw);
+}
+
+
+.topbar
+{
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 3%;
+    padding-top: 1vh;
+    color: var(--topbar-fcl);
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template: 40% 60% / 60% 30%;
+    font-size: var(--topbar-fs);
+    font-weight: var(--topbar-fw);
+}
+
+.topbar .search-section
+{
+    display: flex;
+    align-items: center;
+    gap: 4%;
+}
+.topbar .search-section .search-bar
+{
+    flex: 1 1 auto;
+    height: calc(1.1*var(--topbar-icsz));
+    min-width: 0;
+    background-color: var(--searchbar-bgl);
+    box-sizing: border-box;
+    padding-left: 3%;
+    padding-right: 3%;
+    border: none;
+    border-radius: 100vw;/* makes element as round as it can be because 50% looks fuzzy*/
+    outline: none;
+    font-size: 1em;/* equivalent to topbar font size */
+    font-weight: var(--searchbar-fw);
+}
+.topbar .search-section .search-bar:hover
+{
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+}
+
+.topbar .icon
+{
+    -webkit-filter: invert(5%); /* Safari/Chrome */
+    filter: invert(5%);
+    width: var(--topbar-icsz);
+    height: auto;
+}
+
+.topbar .profile-section
+{
+    display: flex;
+    justify-content: end;
+    gap: 15%;
+    align-items: center;
+}
+.topbar .profile-section .profile-picture
+{
+    height: calc(1.8*var(--topbar-icsz));
+    border-radius: 50%;
+}
+
+.topbar .hi-there-section .profile-picture
+{
+    height: calc(2.5*var(--topbar-icsz));
+    border-radius: 50%;
+}
+
+.topbar .profile-picture img
+{
+    max-height: 100%;
+    width: auto;
+    border-radius: 50%;
+}
+
+.topbar .hi-there-section
+{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+.topbar .hi-there-section .text
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25vh;
+}
+.topbar .hi-there-section .text .hi-there
+{
+    font-size: calc(0.8*var(--topbar-fs));
+}
+.topbar .hi-there-section .text .name
+{
+    font-size: calc(1.4*var(--topbar-fs));
+}
+
+.topbar .buttons-section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.topbar .buttons-section button
+{
+    flex: 1 1 0;
+    height: calc(1.2*var(--topbar-icsz));
+    border: none;
+    border-radius: 100vw; /* assures element is as round as possible */
+    font-size: calc(0.8*var(--topbar-fs));
+    font-weight: calc(var(--topbar-fw)*0.9);
+    background-color: var(--button-bgl);
+    color: var(--button-fcl);
 }
