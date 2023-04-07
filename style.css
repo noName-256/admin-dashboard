@@ -1,0 +1,73 @@
+html
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    /*
+    l for light mode, d for dark mode
+    fs: font size
+    fw: font weight
+    fc: font color
+    bg: background color
+    icsz: icon size
+    */
+    --sidebar-fs: 2.5rem;
+    --sidebar-fw: 600;
+    --sidebar-fcl: #fafafa;
+    --sidebar-icsz: 2rem;
+    --sidebar-bgl: #6366f1;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    min-height: 100vh;
+    min-width: 100vw;
+    grid-template: 15% 35% 35% / 20% 1fr 20% 0;
+    gap: 5%;
+}
+.sidebar
+{
+    background-color: var(--sidebar-bgl);
+    box-sizing: border-box;
+    padding: 10%;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+}
+.sidebar .section
+{
+    display: flex;
+    flex-direction: column;
+    gap: calc(1/4*var(--sidebar-fs));
+}
+.sidebar .element /* any combo of logo and title */
+{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+/* note that the min calculations for the size of fonts and icons is for
+not allowing them to go over the sidebar on desktop, mobile should have a different solution */
+.sidebar .title
+{
+    font-size: min(var(--sidebar-fs), 2vw);
+    font-weight: var(--sidebar-fw);
+}
+.sidebar .icon
+{
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
+    width: min(var(--sidebar-icsz), 3vw);
+    height: auto;
+}
+.sidebar .title-section .title /* targeting the dashboard title */
+{
+    font-size: min(calc(1.5*var(--sidebar-fs)), 2.5vw);
+}
+.sidebar .title-section .icon /* targeting the dashboard logo */
+{
+    width: min(1.5*calc(var(--sidebar-icsz)), 3vw);
+}
