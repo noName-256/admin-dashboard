@@ -11,6 +11,7 @@ html
     bg: background color
     icsz: icon size
     */
+    --body-bgl: #e2e8f0;
     --sidebar-bgl: #6366f1;
     --sidebar-fs: 2.5rem;
     --sidebar-fw: 600;
@@ -31,10 +32,11 @@ body
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: var(--body-bgl);
     display: grid;
     min-height: 100vh;
     min-width: 100vw;
-    grid-template: 20vh 40vh 40vh / 20% 1fr 20% 0;
+    grid-template: 21vh 40vh 40vh / 20% 1fr 20% 0;
 }
 
 
@@ -92,10 +94,13 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     padding-left: 4%;
     padding-right: 3%;
     padding-top: 1vh;
-    color: var(--topbar-fcl);
+    padding-bottom: 1vh;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     grid-column: 2 / -1;
     display: grid;
     grid-template: 40% 60% / 60% 30%;
+    background-color: var(--topbar-bgl);
+    color: var(--topbar-fcl);
     font-size: var(--topbar-fs);
     font-weight: var(--topbar-fw);
 }
@@ -200,3 +205,4 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     background-color: var(--button-bgl);
     color: var(--button-fcl);
 }
+
