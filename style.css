@@ -414,7 +414,6 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 }
 .main .trending .content
 {
-    overflow: scroll;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -424,7 +423,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     overflow: hidden;
     box-sizing: border-box;
-    padding: 1.5vh;
+    padding: 0.8vh;
     flex: 1 1 0;
     display: flex;
     flex-direction: row;
@@ -433,7 +432,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 .main .trending .content .card .profile
 {
     align-self: center;
-    height: 120%;
+    height: 100%;
     width: auto;
     border-radius: 50%;
 }
@@ -450,7 +449,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 }
 .main .trending .content .card .text .description
 {
-    max-width: 25ch;
+    max-width: min(25ch, 20vw);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -460,6 +459,10 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 
 @media (min-height: 400px)
 {
+    .main .trending .content .card .text .description
+    {
+        display: none;
+    }
     .main .announcements .content .card .text
     {
         display: -webkit-box;
@@ -472,6 +475,10 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 }
 @media (min-height: 630px)
 {
+    .main .trending .content .card .text .description
+    {
+        display: block;
+    }
     .main .announcements .content .card .text
     {
         display: -webkit-box;
