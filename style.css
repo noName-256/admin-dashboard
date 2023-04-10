@@ -225,8 +225,8 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     overflow: scroll;
     display: grid;
-    grid-template: 60% 40% / 3fr 1fr;
-    padding: 2% 1.5%;
+    grid-template: 60% 40% / 3fr 1.05fr;
+    padding: 2% 1.5% 2% 1.5%;
     color: var(--main-fcl);
 }
 
@@ -247,9 +247,9 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     flex: 1 1 0;
     display: grid;
-    grid-template: 32vh 32vh / 45% 45%;
+    grid-template: 32vh 32vh / 46% 46%;
     grid-auto-rows: 32vh;
-    gap: 5%;
+    gap: 4%;
 }
 .main .projects .project-cards .card
 {
