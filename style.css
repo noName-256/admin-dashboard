@@ -36,7 +36,7 @@ html
     --card-para-fw: 400;
     --announcement-title-fs: calc(0.8*var(--card-title-fs));
     --announcement-title-fw: calc(var(--card-title-fw));
-    --announcement-para-fs: calc(0.8*var(var(--card-para-fs)));
+    --announcement-para-fs: 1rem;
     --announcement-para-fw: calc(var(--card-para-fw));
     --para-opacity: 0.75; 
 }
@@ -225,7 +225,8 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     overflow: scroll;
     display: grid;
-    grid-template: 60% 40% / 3fr 1.05fr;
+    grid-template: 50vh 40vh / 3fr 1.05fr;
+    row-gap: 3vh;
     padding: 2% 1.5% 2% 1.5%;
     color: var(--main-fcl);
 }
@@ -343,4 +344,69 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     font-size: var(--announcement-para-fs);
     font-weight: var(--announcement-para-fw);
     opacity: var(--para-opacity);
+}
+
+
+.main .trending
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.main .trending .trending-title
+{
+    font-size: var(--projects-title-fs);
+    font-weight: var(--projects-title-fw);
+}
+.main .trending .content-padding
+{
+    flex: 1 1 0;
+    padding: 2vh;
+    border-radius: 0.5vw;
+    background-color: var(--topbar-bgl);
+}
+.main .trending .content
+{
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+}
+.main .trending .content .card
+{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 1.5vh;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+}
+.main .trending .content .card .profile
+{
+    align-self: center;
+    height: 120%;
+    width: auto;
+    border-radius: 50%;
+}
+.main .trending .content .card .text
+{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.main .trending .content .card .text .name
+{
+    font-size: var(--announcement-title-fs);
+    font-weight: var(--announcement-title-fw);
+}
+.main .trending .content .card .text .description
+{
+    max-width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--announcement-title-fs);
+    font-weight: var(--announcement-para-fw);
 }
