@@ -7,27 +7,71 @@ html {
     bg: background color
     icsz: icon size
     */
-    --sidebar-fs: 2.5rem;
+    --base: 0.8vw; /* base size */
+    --sidebar-fs: calc(2.5*var(--base));
     --sidebar-fw: 600;
-    --sidebar-icsz: 2rem;
-    --topbar-fs: 2.25rem;
+    --sidebar-icsz: calc(2*var(--base));
+    --topbar-fs: calc(2.25*var(--base));
     --topbar-fw: 600;
-    --topbar-icsz: calc(1.7*var(--sidebar-icsz));
+    --topbar-icsz: calc(1.5*var(--sidebar-icsz));
     --searchbar-fw: 400;
     --button-bgl: var(--sidebar-bgl);
     --button-fcl: var(--sidebar-fcl);
-    --projects-title-fs: 3rem;
+    --projects-title-fs: calc(2.25*var(--base));
     --projects-title-fw: 600;
-    --projects-icsz: 2.5rem;
-    --card-title-fs: 1.5rem;
+    --projects-icsz: calc(2.5*var(--base));
+    --card-title-fs: calc(1.5*var(--base));
     --card-title-fw: 500;
-    --card-para-fs: 1.3rem;
+    --card-para-fs: calc(1.3*var(--base));
     --card-para-fw: 400;
     --announcement-title-fs: calc(0.8*var(--card-title-fs));
     --announcement-title-fw: calc(var(--card-title-fw));
-    --announcement-para-fs: 1rem;
+    --announcement-para-fs: calc(1.3*var(--base));
     --announcement-para-fw: calc(var(--card-para-fw));
+    --trending-title-fs: calc(0.8*var(--card-title-fs));
     --para-opacity: 0.75;
+}
+@median (min-device-width: 480px)
+{
+    html
+    {    
+        --base: 1.2vw;
+    }
+}
+@media (min-device-width: 800px)
+{
+    html
+    {    
+        --base: 1.2vw;
+    }
+}
+@media (min-width: 900px)
+{
+    html
+    {    
+        --base: 1.15vw;
+        
+    }
+}
+@media (min-width: 1300px)
+{
+    html 
+    {
+        --base: 1vw; /* base size */
+        --topbar-fs: calc(2*var(--base));
+        --announcement-title-fs: calc(0.8*var(--card-title-fs));
+        --announcement-title-fw: calc(var(--card-title-fw));
+        --announcement-para-fs: calc(1*var(--base));
+        --announcement-para-fw: calc(var(--card-para-fw));
+    }
+}
+@media (min-width: 1700px)
+{
+    html
+    {
+        --base: 0.8vw;
+        --topbar-fs: calc(2.25*var(--base));
+    }
 }
 html
 {
@@ -159,18 +203,18 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     display: flex;
     justify-content: end;
-    gap: 15%;
+    gap: 12%;
     align-items: center;
 }
 .topbar .profile-section .profile-picture
 {
-    height: calc(1.8*var(--topbar-icsz));
+    height: calc(1.5*var(--topbar-icsz));
     border-radius: 50%;
 }
 
 .topbar .hi-there-section .profile-picture
 {
-    height: calc(2.5*var(--topbar-icsz));
+    height: calc(2*var(--topbar-icsz));
     border-radius: 50%;
 }
 
@@ -192,15 +236,15 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.25vh;
+    gap: 0.2vh;
 }
 .topbar .hi-there-section .text .hi-there
 {
-    font-size: calc(0.8*var(--topbar-fs));
+    font-size: calc(0.6*var(--topbar-fs));
 }
 .topbar .hi-there-section .text .name
 {
-    font-size: calc(1.4*var(--topbar-fs));
+    font-size: calc(1*var(--topbar-fs));
 }
 
 .topbar .buttons-section
@@ -258,6 +302,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     display: flex;
     flex-direction: column;
+    gap: 1vh;
     box-sizing: border-box;
     border-radius: 0.5vw;
     padding-top: 4vh;
@@ -269,7 +314,6 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 }
 .main .projects .project-cards .card .title
 {
-    margin-bottom: 2%;
     font-size: var(--card-title-fs);
     font-weight: var(--card-title-fw);
 }
@@ -332,6 +376,9 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 .main .announcements .content .cards-container .card-container .card
 {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
 }
 .main .announcements .content .card-container:not(:first-child){border-top: 2px solid rgb(0 0 0 / 0.3);}
 .main .announcements .content .card .title
@@ -341,7 +388,6 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 }
 .main .announcements .content .card .text
 {
-    flex: 1 1 0;
     font-size: var(--announcement-para-fs);
     font-weight: var(--announcement-para-fw);
     opacity: var(--para-opacity);
@@ -399,7 +445,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 }
 .main .trending .content .card .text .name
 {
-    font-size: var(--announcement-title-fs);
+    font-size: var(--trending-title-fs);
     font-weight: var(--announcement-title-fw);
 }
 .main .trending .content .card .text .description
@@ -408,7 +454,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: var(--announcement-title-fs);
+    font-size: var(--trending-title-fs);
     font-weight: var(--announcement-para-fw);
 }
 
