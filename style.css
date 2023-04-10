@@ -26,6 +26,14 @@ html
     --searchbar-fw: 400;
     --button-bgl: var(--sidebar-bgl);
     --button-fcl: var(--sidebar-fcl);
+    --main-fcl: #0f172a;
+    --projects-title-fs: 3rem;
+    --projects-title-fw: 600;
+    --projects-icsz: 2.5rem;
+    --card-title-fs: 1.5rem;
+    --card-title-fw: 500;
+    --card-para-fs: 1.3rem;
+    --card-para-fw: 400;
 }
 body
 {
@@ -36,7 +44,7 @@ body
     display: grid;
     min-height: 100vh;
     min-width: 100vw;
-    grid-template: 21vh 40vh 40vh / 20% 1fr 20% 0;
+    grid-template: 21vh 79vh / 20% 1fr;
 }
 
 
@@ -95,6 +103,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     padding-right: 3%;
     padding-top: 1vh;
     padding-bottom: 1vh;
+    border-bottom: 1px solid rgb(0 0 0 / 0.2);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     grid-column: 2 / -1;
     display: grid;
@@ -206,3 +215,74 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
     color: var(--button-fcl);
 }
 
+
+.main
+{
+    overflow: scroll;
+    display: grid;
+    grid-template: 60% 40% / 3fr 1fr;
+    padding: 2% 1.5%;
+    color: var(--main-fcl);
+}
+
+
+.main .projects
+{
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.main .projects .projects-title
+{
+    font-size: var(--projects-title-fs);
+    font-weight: var(--projects-title-fw);
+}
+.main .projects .project-cards
+{
+    flex: 1 1 0;
+    display: grid;
+    grid-template: 32vh 32vh / 45% 45%;
+    grid-auto-rows: 32vh;
+    gap: 5%;
+}
+.main .projects .project-cards .card
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 0.5vw;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-left: 0.5vw solid #facc15;
+    background-color: var(--topbar-bgl);
+}
+.main .projects .project-cards .card .title
+{
+    margin-bottom: 2%;
+    font-size: var(--card-title-fs);
+    font-weight: var(--card-title-fw);
+}
+.main .projects .project-cards .card .text
+{
+    overflow: hidden;
+    flex: 1 1 0;
+    opacity: 0.75;
+    font-size: var(--card-para-fs);
+    font-weight: var(--card-para-fw);
+}
+.main .projects .project-cards .card .button-section
+{
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 8%;
+}
+.main .projects .project-cards .card .button-section .icon
+{
+    height: var(--projects-icsz);
+    width: auto;
+}
