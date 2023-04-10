@@ -34,6 +34,11 @@ html
     --card-title-fw: 500;
     --card-para-fs: 1.3rem;
     --card-para-fw: 400;
+    --announcement-title-fs: calc(0.8*var(--card-title-fs));
+    --announcement-title-fw: calc(var(--card-title-fw));
+    --announcement-para-fs: calc(0.8*var(var(--card-para-fs)));
+    --announcement-para-fw: calc(var(--card-para-fw));
+    --para-opacity: 0.75; 
 }
 body
 {
@@ -269,7 +274,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     overflow: hidden;
     flex: 1 1 0;
-    opacity: 0.75;
+    opacity: var(--para-opacity);
     font-size: var(--card-para-fs);
     font-weight: var(--card-para-fw);
 }
@@ -285,4 +290,57 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     height: var(--projects-icsz);
     width: auto;
+}
+
+
+.main .announcements
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.main .announcements .announcements-title
+{
+    font-size: var(--projects-title-fs);
+    font-weight: var(--projects-title-fw);
+}
+.main .announcements .content
+{
+    overflow: scroll;
+    flex: 1 1 0;
+    padding: 2vh;
+    border-radius: 0.5vw;
+    background-color: var(--topbar-bgl);
+}
+.main .announcements .content .cards-container
+{
+    overflow: scroll;
+    box-sizing: border-box;
+    height: 100%;
+}
+.main .announcements .content .cards-container .card-container
+{
+    box-sizing: border-box;
+    padding: 1.5vh;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.main .announcements .content .cards-container .card-container .card
+{
+    overflow: hidden;
+}
+.main .announcements .content .card-container:not(:first-child){border-top: 2px solid rgb(0 0 0 / 0.3);}
+.main .announcements .content .card .title
+{
+    font-size: var(--announcement-title-fs);
+    font-weight: var(--announcement-title-fw);
+}
+.main .announcements .content .card .text
+{
+    overflow: hidden;
+    flex: 1 1 0;
+    font-size: var(--announcement-para-fs);
+    font-weight: var(--announcement-para-fw);
+    opacity: var(--para-opacity);
 }
