@@ -247,6 +247,18 @@ body
     font-size: min(calc(1.5*var(--sidebar-fs)), 2.5vw);
 }
 
+:not(.sidebar) .icon{transition: all 0.4s ease-out;}
+:not(.sidebar) .icon:hover
+{
+    padding: 3px;
+    border-radius: 10px;
+    background-color: rgb(0 0 0 / 0.2);
+}
+button{transition: all 0.4s ease-out;}
+button:hover
+{
+    background-color: #4338ca !important;
+}
 
 .topbar
 {
