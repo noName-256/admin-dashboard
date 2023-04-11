@@ -432,7 +432,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 .main .trending .content .card .profile
 {
     align-self: center;
-    height: 100%;
+    height: calc(1.2*var(--topbar-icsz));
     width: auto;
     border-radius: 50%;
 }
@@ -440,7 +440,7 @@ not allowing them to go over the sidebar on desktop, mobile should have a differ
 {
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-content: center;
 }
 .main .trending .content .card .text .name
 {
