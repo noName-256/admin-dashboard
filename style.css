@@ -33,11 +33,11 @@ html {
 
     --card-accent-light: #facc15;
 }
-@media (min-device-width: 600px)
+@media (min-device-width: 320px)
 {
     html
     {    
-        --base: 1.6vw;
+        --base: 2vw;
         --topbar-fs: calc(1.5*var(--base));
         --announcement-title-fw: calc(var(--card-title-fw));
         --announcement-para-fs: calc(1.15*var(--base));
@@ -78,7 +78,13 @@ html {
     {
         border-left: 1vw solid var(--card-accent-light);
     }
-
+}
+@media (min-device-width: 600px)
+{
+    html
+    {    
+        --base: 1.6vw;
+    }
 }
 @media (min-device-width: 800px)
 {
