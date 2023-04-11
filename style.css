@@ -171,9 +171,9 @@ body:not(.hasExtendedSidebar)
 
     .main .projects .project-cards
     {
-        grid-template: 32vh 32vh / 46% 46%;
-        grid-auto-rows: 32vh;
-        gap: 4%;
+        grid-template: 45vh 45vh / 46% 46%;
+        grid-auto-rows: 45vh;
+        gap: 3%;
     }
     .main .projects .project-cards .card
     {
@@ -429,7 +429,7 @@ button:hover
 }
 .main .projects .project-cards .card .text
 {
-    overflow: hidden;
+    overflow: scroll;
     flex: 1 1 0;
     opacity: var(--para-opacity);
     font-size: var(--card-para-fs);
