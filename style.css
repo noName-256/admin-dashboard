@@ -1,3 +1,6 @@
+/* warning: following code is a jumbled mess */
+
+
 html {
     /*
     l for light mode, d for dark mode
@@ -33,6 +36,38 @@ html {
 
     --card-accent-light: #facc15;
 }
+
+body:not(.hasExtendedSidebar)
+{
+    grid-template-columns: min-content 1fr;
+}
+.sidebar .element
+{
+    display: flex;
+}
+.sidebar:not(.extended) .title {display: none;}
+.sidebar.extended .title {display: block;}
+.sidebar:not(.extended) .element
+{
+    justify-content: center;
+}
+.sidebar.extended .element
+{
+    gap: 5%;
+    align-items: center;
+    justify-content: start;
+}
+.sidebar.extended .title-section{margin-top: 0;}
+.sidebar:not(.extended) .title-section{margin-top: 2vh;}
+
+
+@media (max-device-width: 800px)/* targeting mobile only */
+{
+    .sidebar .title
+    {
+        font-size: 4.5vw !important;
+    }
+}
 @media (min-device-width: 320px)
 {
     html
@@ -46,18 +81,12 @@ html {
     {
         grid-template: 15vh 85vh / min-content 1fr;
     }
-    .sidebar .title
+    body.hasExtendedSidebar
     {
-        display: none;
-    }
-    .sidebar .element /* any combo of logo and title */
-    {
-        display: flex;
-        justify-content: center;
+        grid-template-columns: 40% 80%;
     }
     .sidebar .title-section .icon /* targeting the dashboard logo */
     {
-        margin-top: 2vh;
         width: calc(2*var(--sidebar-icsz));
     }
     .sidebar .icon
@@ -96,21 +125,14 @@ html {
     {
         grid-template: 21vh 79vh / 20% 1fr;
     }
-    .sidebar .title
+    body.hasExtendedSidebar
     {
-        display: block;
-    }
-    .sidebar .element /* any combo of logo and title */
-    {
-        gap: 5%;
-        align-items: center;
-        justify-content: start;
+        grid-template-columns: 20% 1fr;
     }
     /* note that the min calculations for the size of fonts and icons is for
     not allowing them to go over the sidebar on desktop, mobile should have a different solution */
     .sidebar .title-section .icon /* targeting the dashboard logo */
     {
-        margin-top: 0;
         width: min(calc(1.5*var(--sidebar-icsz)), 3vw);
     }
     .sidebar .icon
