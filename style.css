@@ -30,6 +30,8 @@ html {
     --announcement-para-fw: calc(var(--card-para-fw));
     --trending-title-fs: calc(0.8*var(--card-title-fs));
     --para-opacity: 0.75;
+
+    --card-accent-light: #facc15;
 }
 @media (min-device-width: 600px)
 {
@@ -74,7 +76,7 @@ html {
     }
     .main .projects .project-cards .card
     {
-        border-left: 1vw solid #facc15;
+        border-left: 1vw solid var(--card-accent-light);
     }
 
 }
@@ -121,7 +123,7 @@ html {
     }
     .main .projects .project-cards .card
     {
-        border-left: 0.55vw solid #facc15;
+        border-left: 0.55vw solid var(--card-accent-light);
     }
 }
 @media (min-width: 900px)
