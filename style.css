@@ -56,6 +56,20 @@ body:not(.hasExtendedSidebar)
 .sidebar .element
 {
     display: flex;
+    transition: all 0.4s ease-out;
+}
+.sidebar .element:not(.dashboard):hover
+{
+    padding: 12px;
+    border-radius: 15px;
+    background-color: rgb(0 0 0 / 0.2);
+}
+.sidebar .dashboard .icon{transition: all 0.4s ease-out;}
+.sidebar .dashboard .icon:hover
+{
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(0 0 0 / 0.2);
 }
 .sidebar:not(.extended) .title {display: none;}
 .sidebar.extended .title {display: block;}
