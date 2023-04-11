@@ -87,7 +87,7 @@ body:not(.hasExtendedSidebar)
 .sidebar:not(.extended) .title-section{margin-top: 2vh;}
 
 
-@media (max-device-width: 800px)/* targeting mobile only */
+@media (max-device-width: 799px)/* targeting mobile only */
 {
     .sidebar .title
     {
